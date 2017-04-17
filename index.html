@@ -5,13 +5,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<title>Group web</title>
-	<link rel="shortcut icon" href="image/leaf.png" type="image/x-icon">
-<link rel="icon" href="image/leaf.png" type="image/x-icon">
-<!--        CSS FILE-->
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	   <link rel="shortcut icon" href="image/leaf.png" type="image/x-icon">
+        <link rel="icon" href="image/leaf.png" type="image/x-icon">
+<!--		<link rel="stylesheet" type="text/css" href="css/normalize.css" />-->
 		<link rel="stylesheet" type="text/css" href="css/component1.css" />
-<!--        JS FILE-->
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<script src="js/modernizr-2.6.2.min.js"></script>
         <script src="js/jquery-2.1.1.min.js"></script>
         <script src="js/jquery.gradientify.min.js"></script>
@@ -28,7 +26,6 @@
                 });
             });
             
-            
         </script>
 
 	</head>
@@ -40,7 +37,9 @@
 			</header>
 			
 			<div class="component">
-				<button class="cn-button" id="cn-button">+</button>       
+				<button class="cn-button" id="cn-button">+</button>   
+                <div class="cn-wrapper" id="cn-wrapper">
+                </div>    
 				<div id="cn-overlay" class="cn-overlay"></div>
 			</div>
 			
@@ -62,21 +61,17 @@
           <div class="popup-call">
   
                 <div class="card">
-                    
                   <div class="wall-container">
-
-                    <img class="wall-pic"   src="http://www.transformingourselves.com/Images/Meditation-leaf.jpg" />
+                      <img class="wall-pic"   src="http://www.transformingourselves.com/Images/Meditation-leaf.jpg" />
                   </div>
+                    
                   <div class="profile" >
                     <img class="profile-pic" src="image/happiness.png"/>
-                   
                         <h2> Tom Hanks</h2>
                         <p>I'm very happy today, my mood is just like this leaf. </p>
-                    
                   </div>
                 </div>
-              </div>
-
+        </div>
               
 </div>
         <script>   
@@ -86,11 +81,11 @@
                 $('.popup-call').toggleClass('popup-call-show');
               });
             });
-            
-
    
         </script>
+
+         <script src="js/demo1.js"></script>
         <script src="js/polyfills.js"></script>
-		<script src="js/demo1.js"></script>
+
 	</body>
 </html>
