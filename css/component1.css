@@ -281,24 +281,6 @@ circle:nth-child(10) {
    width: 35px;
 }
 
-#close {
-    float:right;
-    display:inline-block;
-    padding:1px 8px;
-    bottom: 2px;
-    background:#43BDC7;
-    border-radius: 30px;
-    
-}
-
-#close:hover {
-    float:right;
-    display:inline-block;
-    padding:1px 8px;
-    background:#ccc;
-    color:#FD7F2A;
-    cursor: pointer;
-}
 
 /*pop-up end*/
 
