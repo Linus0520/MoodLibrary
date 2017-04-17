@@ -27,7 +27,8 @@
                     ]
                 });
             });
-
+            
+            
         </script>
 
 	</head>
@@ -61,7 +62,9 @@
           <div class="popup-call">
   
                 <div class="card">
+                    
                   <div class="wall-container">
+
                     <img class="wall-pic"   src="http://www.transformingourselves.com/Images/Meditation-leaf.jpg" />
                   </div>
                   <div class="profile" >
@@ -71,7 +74,7 @@
                         <p>I'm very happy today, my mood is just like this leaf. </p>
                     
                   </div>
-
+                   <span id='close' onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;'>x</span>
                 </div>
               </div>
 
@@ -84,6 +87,8 @@
                 $('.popup-call').toggleClass('popup-call-show');
               });
             });
+            
+
    
         </script>
         <script src="js/polyfills.js"></script>
