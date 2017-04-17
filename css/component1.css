@@ -206,7 +206,7 @@ circle:nth-child(10) {
 }
 
 /*popup*/
-.popup-call{
+.popup-call, .popup-call-form {
   position:fixed;
   margin:auto;
   clear:both;
@@ -222,7 +222,7 @@ circle:nth-child(10) {
   transition: 0.5s ease all;
 }
 
-.popup-call-show{
+.popup-call-show, .popup-call-show-form{
   opacity:1;
   transform:scale(1);
   transition: 0.5s ease all;
@@ -234,24 +234,6 @@ circle:nth-child(10) {
   margin: 1% auto;
   overflow: hidden;
   width: 400px;
-}
-
-#close {
-    float:right;
-    display:inline-block;
-    padding:1px 8px;
-    bottom: 2px;
-    background:#43BDC7;
-    border-radius: 30px;
-    
-}
-
-#close:hover {
-    float:right;
-    display:inline-block;
-     padding:1px 8px;
-    background:#ccc;
-    color:#FD7F2A;
 }
 
 .wall-container {
@@ -270,8 +252,8 @@ circle:nth-child(10) {
   border-color: #454545;
   height: 100px;
   padding: 20px;
-    margin-bottom: 20px;
-    text-align: center;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .profile h2 {
@@ -292,8 +274,6 @@ circle:nth-child(10) {
 
 }
 
-
-
 .profile-pic {
    border: 5px solid #fff;
    border-radius: 50%;
@@ -301,8 +281,82 @@ circle:nth-child(10) {
    width: 35px;
 }
 
+#close {
+    float:right;
+    display:inline-block;
+    padding:1px 8px;
+    bottom: 2px;
+    background:#43BDC7;
+    border-radius: 30px;
+    
+}
+
+#close:hover {
+    float:right;
+    display:inline-block;
+    padding:1px 8px;
+    background:#ccc;
+    color:#FD7F2A;
+    cursor: pointer;
+}
 
 /*pop-up end*/
 
+/*pop-up form*/
 
+.form-card {
+  border-radius: 8px;
+  background-color: white;
+  margin-left: auto;
+  margin-right:auto;
+  overflow: hidden;
+  width: 550px;
+  color: black;
+}
 
+.inline {
+  width: 80%;
+  margin-top: 0.5em;
+  margin-left: auto;
+  margin-right:auto;
+}
+
+.form-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left:auto;
+  margin-right:auto;
+  font-size: 24px;
+  margin:0.5em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.myButton {
+  background:#43bdc7;
+  border:0;
+  border-radius:5px;
+  color:#fff;
+  font-size:16px;
+  padding:10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 1em;
+}
+
+textarea {
+  border-radius: 5px;
+  border-color:#aaaaaa;
+
+}
