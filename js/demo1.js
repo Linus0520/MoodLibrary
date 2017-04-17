@@ -1,4 +1,4 @@
-function{
+(function(){
 
 	var button = document.getElementById('cn-button'),
     wrapper = document.getElementById('cn-wrapper'),
@@ -38,5 +38,5 @@ function{
 	}
 	document.addEventListener('click', closeNav);
 
-}();
+})();
 
