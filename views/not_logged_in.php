@@ -21,6 +21,7 @@ if (isset($login)) {
     <title>group web</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/detail.css" media="all">
+    <link rel="shortcut icon" href="image/leaf.png" type="image/x-icon">
     <script src="js/modernizr.js" type="text/javascript"></script>
     <script src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/easyform.js"></script>
