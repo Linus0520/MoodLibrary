@@ -49,13 +49,17 @@ $db = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', 'root');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-    if(isset($_POST['name'])&&isset($_POST['story'])){
-        $name = $_POST['name'];
+        $userID = $_SESSION['user_id'];
+        $date = date("Y/m/d");
+
+    if(isset($_POST['emoji_id'])&&isset($_POST['story'])){
+        $emoji = $_POST['emoji_id'];
         $story = $_POST['story'];
         $filename = ($_FILES["fileToUpload"]["name"]);
-        $sql = "INSERT INTO `upload` (`name`,`story`,`picturename`) VALUES (?,?,?)";
+        $sql = "INSERT INTO `upload` (`emoji_id`,`story`,`user_id`,`date`,`picturename`) VALUES (?,?,?,?,?)";
         $query = $db->prepare($sql);
-        $result = $query->execute([$name, $story, $filename]);
+        $result = $query->execute([$emoji, $story, $userID, $date, $filename]);
     }
+
 
 ?>
