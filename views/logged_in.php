@@ -35,9 +35,14 @@
 		<div class="container">
 
 			<header>
-			        <div class = "log">
-				  <p>Hey, <?php echo $_SESSION['user_name']; ?>.</p>
-				  <a href="index.php?logout">Logout</a>
+			        <div class = "header">
+				  <div class="logout">
+				    <p>Hey, <?php echo $_SESSION['user_name']; ?>.</p>
+				    <a href="index.php?logout">Logout</a>
+				  </div>
+				  <div class = "history">
+				      <a href = d3.html>Mood History</a>
+				  </div>
 				</div>
 				<h1>Mood Library<span>Upload your mood <br>or click the balls to see other people's mood below</span></h1>
 			</header>
