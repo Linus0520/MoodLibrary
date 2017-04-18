@@ -108,8 +108,8 @@ class Login
         $_SESSION = array();
         session_destroy();
         // return a little feeedback message
-        $this->messages[] = "You have been logged out.";
-
+        $message = "You have been logged out.";
+        echo "<script type='text/javascript'>alert('$message');</script>";
     }
 
     /**
