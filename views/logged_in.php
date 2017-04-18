@@ -180,6 +180,5 @@
    
         </script>
         <script src="js/polyfills.js"></script>
-		<script src="js/demo1.js"></script>
 	</body>
 </html>
