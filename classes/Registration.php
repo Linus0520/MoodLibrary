@@ -39,21 +39,37 @@ class Registration
         if (empty($_POST['user_name'])) {
             $this->errors[] = "Empty Username";
         } elseif (empty($_POST['user_password_new']) || empty($_POST['user_password_repeat'])) {
-            $this->errors[] = "Empty Password";
+            $message = "Empty Password";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+            // $this->errors[] = "Empty Password";
         } elseif ($_POST['user_password_new'] !== $_POST['user_password_repeat']) {
-            $this->errors[] = "Password and password repeat are not the same";
+            $message = "Password and password repeat are not the same";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+            // $this->errors[] = "Password and password repeat are not the same";
         } elseif (strlen($_POST['user_password_new']) < 6) {
-            $this->errors[] = "Password has a minimum length of 6 characters";
+            $message = "Password has a minimum length of 6 characters";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+            // $this->errors[] = "Password has a minimum length of 6 characters";
         } elseif (strlen($_POST['user_name']) > 64 || strlen($_POST['user_name']) < 2) {
-            $this->errors[] = "Username cannot be shorter than 2 or longer than 64 characters";
+            $message = "Username cannot be shorter than 2 or longer than 64 characters";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+            // $this->errors[] = "Username cannot be shorter than 2 or longer than 64 characters";
         } elseif (!preg_match('/^[a-z\d]{2,64}$/i', $_POST['user_name'])) {
-            $this->errors[] = "Username does not fit the name scheme: only a-Z and numbers are allowed, 2 to 64 characters";
+             $message = "Username does not fit the name scheme: only a-Z and numbers are allowed, 2 to 64 characters";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+            // $this->errors[] = "Username does not fit the name scheme: only a-Z and numbers are allowed, 2 to 64 characters";
         } elseif (empty($_POST['user_email'])) {
-            $this->errors[] = "Email cannot be empty";
+            $message = "Email cannot be empty";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+            // $this->errors[] = "Email cannot be empty";
         } elseif (strlen($_POST['user_email']) > 64) {
-            $this->errors[] = "Email cannot be longer than 64 characters";
+            $message = "Email cannot be longer than 64 characters";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+            // $this->errors[] = "Email cannot be longer than 64 characters";
         } elseif (!filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)) {
-            $this->errors[] = "Your email address is not in a valid email format";
+            $message = "Your email address is not in a valid email format";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+            // $this->errors[] = "Your email address is not in a valid email format";
         } elseif (!empty($_POST['user_name'])
             && strlen($_POST['user_name']) <= 64
             && strlen($_POST['user_name']) >= 2
@@ -92,7 +108,9 @@ class Registration
                 $query_check_user_name = $this->db_connection->query($sql);
 
                 if ($query_check_user_name->num_rows == 1) {
-                    $this->errors[] = "Sorry, that username / email address is already taken.";
+                    $message = "Sorry, that username / email address is already taken.";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+                    // $this->errors[] = "Sorry, that username / email address is already taken.";
                 } else {
                     // write new user's data into database
                     $sql = "INSERT INTO users (user_name, user_password_hash, user_email)
@@ -101,16 +119,25 @@ class Registration
 
                     // if user has been added successfully
                     if ($query_new_user_insert) {
-                        $this->messages[] = "Your account has been created successfully. You can now log in.";
-                    } else {
-                        $this->errors[] = "Sorry, your registration failed. Please go back and try again.";
+                        $message = "Your account has been created successfully. You can now log in.";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+                        // $this->messages[] = "Your account has been created successfully. You can now log in.";
+                    } 
+                    else {
+                        $message = "Sorry, your registration failed. Please go back and try again.";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+                        // $this->errors[] = "Sorry, your registration failed. Please go back and try again.";
                     }
                 }
             } else {
-                $this->errors[] = "Sorry, no database connection.";
+                $message = "Sorry, no database connection.";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+                // $this->errors[] = "Sorry, no database connection.";
             }
         } else {
-            $this->errors[] = "An unknown error occurred.";
+            $message = "An unknown error occurred.";
+                        echo "<script type='text/javascript'>alert('$message');</script>";
+            // $this->errors[] = "An unknown error occurred.";
         }
     }
 }
