@@ -109,18 +109,32 @@
             <div class="form-title">
               How were you?
             </div>
-            <div>
-              <input type="radio" name="emoji_id" value="1" checked> 
-                <img src="emojis/rad.png">Rad
-              <input type="radio" name="emoji_id" value="2"> 
-                <img src="emojis/good.png">Good
-              <input type="radio" name="emoji_id" value="3"> 
-                <img src="emojis/normal.png">Meh
-              <input type="radio" name="emoji_id" value="4">
-                <img src="emojis/sad.png"> Sad
-              <input type="radio" name="emoji_id" value="5"> 
-                <img src="emojis/awful.png">Awful
-            </div>
+                  <div class="emojis">
+                    <label class="radioGone">
+                          <input type="radio" name="emoji_id" value="1" checked>
+                            <img src="emojis/rad.png">
+                    </label>
+
+                    <label class="radioGone">
+                          <input type="radio" name="emoji_id" value="2">
+                            <img src="emojis/good.png">
+                    </label>
+
+                    <label class="radioGone">
+                          <input type="radio" name="emoji_id" value="3">
+                            <img src="emojis/normal.png">
+                    </label>
+
+                    <label class="radioGone">
+                          <input type="radio" name="emoji_id" value="4">
+                            <img src="emojis/sad.png">
+                    </label>
+
+                    <label class="radioGone">
+                          <input type="radio" name="emoji_id" value="5">
+                            <img src="emojis/awful.png">
+                    </label>
+              </div>
           </div>
 
           <ul class="formstyle">
