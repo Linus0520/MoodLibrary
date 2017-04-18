@@ -67,8 +67,8 @@
                 <div class="card">
                   <div class="wall-container">
 
-          <?php
-            $db = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', 'root');
+      
+            <!-- $db = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', 'root');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
@@ -86,17 +86,15 @@
                   <div class='profile' >
                     <img class='profile-pic' src='emojis/".$result[0]['emoji_image']."'/>";
             echo "<h2>Tom Hanks</h2>"; //we havn't figured out how to input the user name data, so can't display yet
-            echo "<p>".$result[0]['story']."</p>"
+            echo "<p>".$result[0]['story']."</p>" -->
 
-          ?>
-       <!--     <img class="wall-pic"   src="http://www.transformingourselves.com/Images/Meditation-leaf.jpg" />
+           <img class="wall-pic" src="http://www.transformingourselves.com/Images/Meditation-leaf.jpg" />
                   </div>
                   <div class="profile" >
-                    <img class="profile-pic" src="image/happiness.png"/>
-                    -->
-                       <!--  <h2> Tom Hanks</h2>
-                        <p>I'm very happy today, my mood is just like this leaf. </p> -->
-                    
+                    <img class="profile-pic" src="emojis/good.png"/>
+                   
+                        <h2 id="fullname"> Tom Hanks </h2>
+                        <p id="fullstory"> I'm very happy today, my mood is just like this leaf. </p>
                   </div>
                 </div>
               </div>
@@ -140,23 +138,27 @@
             
 </div>
       
-     <?php
+      <?php
       $db = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', 'root');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-        $username = $_SESSION['user_name']; 
+
+
+        $userID = $_SESSION['user_id'];
         $date = date("Y/m/d");
+
 
         if(isset($_POST['emoji_id'])&&isset($_POST['story'])){
           $emoji = $_POST['emoji_id'];
           $story = $_POST['story'];
-          $sql = "INSERT INTO `upload` (`emoji_id`,`user_name`,`story`,`date`) VALUES (?,?,?,?)";
+          $sql = "INSERT INTO `upload` (`emoji_id`,`story`,`user_id`,`date`) VALUES (?,?,?,?)";
           $query = $db->prepare($sql);
-            $result = $query->execute([$emoji,$username, $story,$date]);
+          $result = $query->execute([$emoji, $story, $userID, $date]);
         }
 
       ?>
+
 
 
         <script>   
@@ -164,6 +166,43 @@
           $(document).ready(function(){
               $('.click-popup-call').on('click', function(){
                 $('.popup-call').toggleClass('popup-call-show');
+
+                var myRequest = new XMLHttpRequest;
+                myRequest.onreadystatechange = function(){     
+                    console.log(myRequest.readyState); // return 1,2,3,4    
+                    if(myRequest.readyState === 4){        
+                    console.log(myRequest.responseText);// modify or populate html elements based on response.
+      
+                    var responseObject = JSON.parse(myRequest.responseText); //return as a javascript object
+                    //the variable response is now an object representation of the responseText JSON-formatted string.
+                    var x = Math.floor((Math.random() * responseObject.length));
+                    console.log(x);
+
+                    var picture = responseObject[x].picturename;
+                    var mood = responseObject[x].emoji_image;
+                    var fullname = responseObject[x].user_name;
+                    var fullstory = responseObject[x].story;
+
+                    $(".wall-pic").removeAttr('src');
+                    $(".wall-pic").attr('src', 'uploads/' + picture);
+
+                    $(".profile-pic").removeAttr('src');
+                    $(".profile-pic").attr('src', 'emojis/' + mood);
+
+                    $("#fullname").html( fullname );
+                    $("#fullstory").html( fullstory );
+                    
+                  }
+
+                }
+                //replace existing data
+
+                //$(element).find('.wall-pic').removeAttr('src');
+                //$(element).find('.wall-pic').attr('src', 'uploads/' + responseObject[Math.random()].picturename);
+
+
+                myRequest.open("GET", "datajson_test.php", true); //making the actual request, true means it is asynchronous // Send urls through the url
+                myRequest.send(null);
               });
 
               $('.cn-button').on('click', function(){
