@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 18, 2017 at 05:36 AM
+-- Generation Time: Apr 18, 2017 at 10:45 AM
 -- Server version: 5.6.28
 -- PHP Version: 7.0.10
 
@@ -51,7 +51,7 @@ INSERT INTO `emoji` (`emoji_id`, `emoji_image`) VALUES
 CREATE TABLE `upload` (
   `date_id` int(11) NOT NULL,
   `date` date NOT NULL,
-  `user_name` varchar(100) NOT NULL,
+  `user_name` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `emoji_id` int(11) NOT NULL,
   `story` text NOT NULL,
   `picturename` varchar(40) NOT NULL
@@ -62,9 +62,16 @@ CREATE TABLE `upload` (
 --
 
 INSERT INTO `upload` (`date_id`, `date`, `user_name`, `emoji_id`, `story`, `picturename`) VALUES
-(1, '2017-04-10', 'linus', 1, 'happy', 'happy.png'),
-(2, '2017-04-10', 'linus', 4, 'sad', 'sad.png'),
-(8, '2017-04-18', 'linus', 1, 'aaa', 'mengsigong_illustration.jpg');
+(9, '2017-04-03', 'linus', 1, 'aaa', '1.png'),
+(10, '2017-04-05', 'linus', 5, 'aaa', '2.png'),
+(12, '2017-04-06', 'linus', 5, 'aaa', '3.png'),
+(13, '2017-04-11', 'linus', 4, 'ddd', '4.png'),
+(14, '2017-04-12', 'linus', 3, 'aa', '5.png'),
+(15, '2017-04-07', 'linus', 1, 'a', '6.png'),
+(16, '2017-04-18', 'linus', 2, '', 'Screen Shot 2017-04-18 at 16.27.51.png'),
+(17, '2017-04-01', 'lulu', 2, 'hahaha', '8.png'),
+(18, '2017-04-04', 'lulu', 1, 'nnn', '9.png'),
+(19, '2017-04-07', 'lulu', 5, '33', '10.png');
 
 -- --------------------------------------------------------
 
@@ -85,8 +92,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_password_hash`, `user_email`) VALUES
 (1, 'linus', '$2y$10$XJQkxmntCth086SP8TSYCuqHE3NssJfRRQn9N1V3OlrFzr3uK6nmi', 'cupzhen@sina.com'),
-(2, 'Daisy', '$2y$10$qzCdHnDF3bd.LQX0aS1zHOB7RmZn48uOQL46ZkSlmIvzFnFJ8Q1Q6', '123@sina.com'),
-(3, 'mengsi', '$2y$10$UIUHpqy1RzRIQ3ceOVI3YeyWe9yHQR8Lss6wERGNhEQewTDxO3jEW', 'aaa@sina.com');
+(6, 'lulu', '$2y$10$tDiDIh0cF2Vfh6u8JqQWHODUi6afiQ8dUAohlW7MZoCbHIllSQx1m', 'aaa@sina.com');
 
 --
 -- Indexes for dumped tables
@@ -125,12 +131,13 @@ ALTER TABLE `emoji`
 -- AUTO_INCREMENT for table `upload`
 --
 ALTER TABLE `upload`
-  MODIFY `date_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `date_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index', AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index', AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
