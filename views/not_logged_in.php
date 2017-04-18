@@ -237,7 +237,7 @@ if (isset($registration)) {
       </div>
       
    </div>
-   <div id='title'>Group web</div>
+   <div id='title'>MOOD LIBRARY</div>
     <script src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
     <script src="js/index.js"></script>
 </body>
