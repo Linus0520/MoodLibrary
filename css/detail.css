@@ -175,22 +175,22 @@ input.btn {
 	
 }
 
-.btn-submit {
-	color: #fff;
-	width: 194px;
-	padding: 5px 10px;
-	margin-left: 20px;
-	font-size: 15px;
-	background-color: #a4a1a1;
-	background-image: linear-gradient(top, #6396c8, #346392);
-	border: none;
-	border-radius: 2px;
-	
-}
-.btn-submit:hover {
-	background-color:#57bef9;
+input.btn-subimt {
+    color: #fff;
+    width: 194px;
+    padding: 5px 10px;
+    margin-left: 20px;
+    font-size: 15px;
+    background-color: #a4a1a1;
+    background-image: linear-gradient(top, #6396c8, #346392);
+    border: none;
+    border-radius: 2px;
 }
 
+
+input.btn-subimt:hover{
+    background-color: #57bef9;
+}
 .theme-buy {
 	margin-top:10%;
 	text-align: center;
@@ -344,12 +344,10 @@ display:;
 	margin-bottom: 15px;
 }
 .theme-signin li strong {
-	float: left;
-	margin-left: -80px;
-	padding-right: 20px;
-	width: 80px;
-	/*text-align: right;
-	line-height: 32px;*/
+    float: left;
+    margin-left: -80px;
+    padding-right: 20px;
+    width: 80px;
 }
 .theme-signin .btn {
 	margin-bottom: 10px;
