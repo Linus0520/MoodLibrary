@@ -98,7 +98,6 @@
                         <p>I'm very happy today, my mood is just like this leaf. </p> -->
                     
                   </div>
-               <span id='close' onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;'>x</span>
                 </div>
               </div>
 
