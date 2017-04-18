@@ -108,7 +108,7 @@
 
       <div class="popup-call-form">
         <div class="form-card">
-          <form action="upload.php" method="post" enctype="multipart/form-data">
+          <form action="index.php" method="post" enctype="multipart/form-data">
 
           <div class="inline">
             <div class="form-title">
@@ -157,8 +157,8 @@
             
 </div>
       
-      <?php
-      $db = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', 'root');
+      
+   <!--    $db = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', 'root');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
@@ -171,11 +171,86 @@
           $sql = "INSERT INTO `upload` (`emoji_id`,`user_name`,`story`,`date`) VALUES (?,?,?,?)";
           $query = $db->prepare($sql);
             $result = $query->execute([$emoji,$username, $story,$date]);
-        }
+        } -->
 
-      ?>
+        <?php
 
+            $target_dir = "uploads/";
+            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+            // Check if image file is a actual image or fake image
+            if(isset($_POST["submit"])) {
+                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                if($check !== false) {
+                    echo '<script language="javascript">';
+                    echo 'alert("File is an image - ' . $check["mime"] . '.")';
+                    echo '</script>';
+                    $uploadOk = 1;
+                } else {
+                    echo '<script language="javascript">';
+                    echo 'alert("File is not an image.")';
+                    echo '</script>';
+                    $uploadOk = 0;
+                }
+            }
+            // Check if file already exists
+            if (file_exists($target_file)) {
+                echo '<script language="javascript">';
+                echo 'alert("Sorry, file already exists.")';
+                echo '</script>';
+                $uploadOk = 0;
+            }
+            // Check file size
+            if ($_FILES["fileToUpload"]["size"] > 500000) {
+                echo '<script language="javascript">';
+                echo 'alert("Sorry, your file is too large.")';
+                echo '</script>';
+                $uploadOk = 0;
+            }
+            // Allow certain file formats
+            if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif" ) {
+                echo '<script language="javascript">';
+                echo 'alert("Sorry, only JPG, JPEG, PNG & GIF files are allowed.")';
+                echo '</script>';
+                $uploadOk = 0;
+            }
+            // Check if $uploadOk is set to 0 by an error
+            if ($uploadOk == 0) {
+                echo '<script language="javascript">';
+                echo 'alert("Sorry, your file was not uploaded.")';
+                echo '</script>';
+            // if everything is ok, try to upload file
+            } else {
+                if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                    echo '<script language="javascript">';
+                    echo 'alert("Thank you for sharing your mood! The file'. basename( $_FILES["fileToUpload"]["name"]). ' has been uploaded.")';
+                    echo '</script>';
+                } else {
+                    echo '<script language="javascript">';
+                    echo 'alert("Sorry, there was an error uploading your file.")';
+                    echo '</script>';
+                }
+            }
 
+            $db = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', 'root');
+                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+                    $username = $_SESSION['user_name'];
+                    $date = date("Y/m/d");
+
+                if(isset($_POST['emoji_id'])&&isset($_POST['story'])){
+                    $emoji = $_POST['emoji_id'];
+                    $story = $_POST['story'];
+                    $filename = ($_FILES["fileToUpload"]["name"]);
+                    $sql = "INSERT INTO `upload` (`emoji_id`,`story`,`user_name`,`date`,`picturename`) VALUES (?,?,?,?,?)";
+                    $query = $db->prepare($sql);
+                    $result = $query->execute([$emoji, $story,  $username, $date, $filename]);
+                }
+
+        ?>
 
 
         <script>   
