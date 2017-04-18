@@ -236,9 +236,6 @@ if (isset($registration)) {
          
       </div>
       
-      <div class='flex-item'>
-         <a class="btn btn-primary" href="javascript:;">GUEST</a>
-      </div>
    </div>
    <div id='title'>Group web</div>
     <script src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
