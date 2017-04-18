@@ -55,15 +55,15 @@
 <!--	        Circle background    -->
             <svg  viewBox="0 0 1000 500">
                 <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="50" cy="50"></circle>
-                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="150" cy="250"></circle>
-                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="250" cy="250"></circle>
-                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="350" cy="250"></circle>
-                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="450" cy="250"></circle>
-                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="550" cy="250"></circle>
-                 <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="650" cy="250"></circle>
-                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="750" cy="250"></circle>
-                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="850" cy="250"></circle>
-                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="950" cy="250"></circle>
+                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="150" cy="50"></circle>
+                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="250" cy="50"></circle>
+                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="350" cy="50"></circle>
+                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="450" cy="50"></circle>
+                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="550" cy="50"></circle>
+                 <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="650" cy="50"></circle>
+                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="750" cy="50"></circle>
+                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="850" cy="50"></circle>
+                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="950" cy="50"></circle>
             </svg>
     <!--	      Circle background End -->
             
