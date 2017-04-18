@@ -178,7 +178,6 @@ input.btn {
 .btn-submit {
 	color: #fff;
 	width: 194px;
-	height: 35px;
 	padding: 5px 10px;
 	margin-left: 20px;
 	font-size: 15px;
@@ -362,3 +361,4 @@ display:;
 .theme-desc, .theme-version {
 	padding-top: 0
 }
+
