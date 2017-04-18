@@ -140,27 +140,23 @@
             
 </div>
       
-      <?php
+     <?php
       $db = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', 'root');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-
-
-        $userID = $_SESSION['user_id'];
+        $username = $_SESSION['user_name']; 
         $date = date("Y/m/d");
-
 
         if(isset($_POST['emoji_id'])&&isset($_POST['story'])){
           $emoji = $_POST['emoji_id'];
           $story = $_POST['story'];
-          $sql = "INSERT INTO `upload` (`emoji_id`,`story`,`user_id`,`date`) VALUES (?,?,?,?)";
+          $sql = "INSERT INTO `upload` (`emoji_id`,`user_name`,`story`,`date`) VALUES (?,?,?,?)";
           $query = $db->prepare($sql);
-            $result = $query->execute([$emoji, $story, $userID, $date]);
+            $result = $query->execute([$emoji,$username, $story,$date]);
         }
 
       ?>
-
 
 
         <script>   
