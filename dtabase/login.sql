@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 15, 2017 at 01:55 AM
+-- Generation Time: Apr 18, 2017 at 05:36 AM
 -- Server version: 5.6.28
 -- PHP Version: 7.0.10
 
@@ -51,7 +51,7 @@ INSERT INTO `emoji` (`emoji_id`, `emoji_image`) VALUES
 CREATE TABLE `upload` (
   `date_id` int(11) NOT NULL,
   `date` date NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `user_name` varchar(100) NOT NULL,
   `emoji_id` int(11) NOT NULL,
   `story` text NOT NULL,
   `picturename` varchar(40) NOT NULL
@@ -61,9 +61,10 @@ CREATE TABLE `upload` (
 -- Dumping data for table `upload`
 --
 
-INSERT INTO `upload` (`date_id`, `date`, `user_id`, `emoji_id`, `story`, `picturename`) VALUES
-(1, '2017-04-10', 1, 1, 'happy', 'happy.png'),
-(2, '2017-04-10', 1, 4, 'sad', 'sad.png');
+INSERT INTO `upload` (`date_id`, `date`, `user_name`, `emoji_id`, `story`, `picturename`) VALUES
+(1, '2017-04-10', 'linus', 1, 'happy', 'happy.png'),
+(2, '2017-04-10', 'linus', 4, 'sad', 'sad.png'),
+(8, '2017-04-18', 'linus', 1, 'aaa', 'mengsigong_illustration.jpg');
 
 -- --------------------------------------------------------
 
@@ -83,7 +84,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_password_hash`, `user_email`) VALUES
-(1, 'linus', '$2y$10$XJQkxmntCth086SP8TSYCuqHE3NssJfRRQn9N1V3OlrFzr3uK6nmi', 'cupzhen@sina.com');
+(1, 'linus', '$2y$10$XJQkxmntCth086SP8TSYCuqHE3NssJfRRQn9N1V3OlrFzr3uK6nmi', 'cupzhen@sina.com'),
+(2, 'Daisy', '$2y$10$qzCdHnDF3bd.LQX0aS1zHOB7RmZn48uOQL46ZkSlmIvzFnFJ8Q1Q6', '123@sina.com'),
+(3, 'mengsi', '$2y$10$UIUHpqy1RzRIQ3ceOVI3YeyWe9yHQR8Lss6wERGNhEQewTDxO3jEW', 'aaa@sina.com');
 
 --
 -- Indexes for dumped tables
@@ -122,12 +125,12 @@ ALTER TABLE `emoji`
 -- AUTO_INCREMENT for table `upload`
 --
 ALTER TABLE `upload`
-  MODIFY `date_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `date_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index', AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index', AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
