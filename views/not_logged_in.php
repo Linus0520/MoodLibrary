@@ -224,7 +224,7 @@ if (isset($registration)) {
                       <ol>
                         <li><strong>Username：</strong><input id="login_input_username" class="login_input ipt" type="text" name="user_name" size="20" easyform="length:4-16;char-normal;real-time;" message="用户名必须为4—16位的英文字母或数字" easytip="disappear:lost-focus;theme:blue;" ajax-message="用户名已存在!"/></li>
                         <li><strong>Password：</strong><input id="login_input_password_new" class="login_input ipt" type="password" name="user_password_new" size="20" easyform="length:6-16;" message="密码必须为6—16位" easytip="disappear:lost-focus;theme:blue;"/></li>
-                        <li><strong>ConfirmPassword：</strong><input id="login_input_password_repeat" class="login_input ipt" type="password" name="user_password_repeat" size="20" easyform="length:6-16;equal:#psw1;" message="两次密码输入要一致" easytip="disappear:lost-focus;theme:blue;" /></li>
+                        <li><strong>Confirm<br>Password：</strong><input id="login_input_password_repeat" class="login_input ipt" type="password" name="user_password_repeat" size="20" easyform="length:6-16;equal:#psw1;" message="两次密码输入要一致" easytip="disappear:lost-focus;theme:blue;" /></li>
                          <li><strong>Email：</strong><input id="login_input_password_new" class="login_input ipt" type="email" name="user_email" easyform="email;real-time;" message="Email格式要正确" easytip="disappear:lost-focus;theme:blue;" ajax-message="这个Email地址已经被注册过，请换一个吧!"/>
                          <li><input class="btn-subimt" type="submit" name="register" value="Register" /></li>
                        </ol>
