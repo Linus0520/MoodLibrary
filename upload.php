@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -49,17 +49,16 @@ $db = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', 'root');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-        $userID = $_SESSION['user_id'];
+        $username = $_SESSION['user_name'];
         $date = date("Y/m/d");
 
     if(isset($_POST['emoji_id'])&&isset($_POST['story'])){
         $emoji = $_POST['emoji_id'];
         $story = $_POST['story'];
         $filename = ($_FILES["fileToUpload"]["name"]);
-        $sql = "INSERT INTO `upload` (`emoji_id`,`story`,`user_id`,`date`,`picturename`) VALUES (?,?,?,?,?)";
+        $sql = "INSERT INTO `upload` (`emoji_id`,`story`,`user_name`,`date`,`picturename`) VALUES (?,?,?,?,?)";
         $query = $db->prepare($sql);
-        $result = $query->execute([$emoji, $story, $userID, $date, $filename]);
+        $result = $query->execute([$emoji, $story,  $username, $date, $filename]);
     }
-
 
 ?>
