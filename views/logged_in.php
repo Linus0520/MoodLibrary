@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Group web</title>
-	<link rel="shortcut icon" href="image/leaf.png" type="image/x-icon">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Group web</title>
+    <link rel="shortcut icon" href="image/leaf.png" type="image/x-icon">
 <link rel="icon" href="image/leaf.png" type="image/x-icon">
 <!--        CSS FILE-->
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/component1.css" />
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/component1.css" />
 <!--        JS FILE-->
-		<script src="js/modernizr-2.6.2.min.js"></script>
+        <script src="js/modernizr-2.6.2.min.js"></script>
         <script src="js/jquery-2.1.1.min.js"></script>
         <script src="js/jquery.gradientify.min.js"></script>
 
@@ -30,29 +30,29 @@
 
         </script>
 
-	</head>
-	<body>
-		<div class="container">
+    </head>
+    <body>
+        <div class="container">
 
-			<header>
-			        <div class = "header">
-				  <div class="logout">
-				    <p>Hey, <?php echo $_SESSION['user_name']; ?>.</p>
-				    <a href="index.php?logout">Logout</a>
-				  </div>
-				  <div class = "history">
-				      <a href = d3.html>Mood History</a>
-				  </div>
-				</div>
-				<h1>Mood Library<span>Upload your mood <br>or click the balls to see other people's mood below</span></h1>
-			</header>
-			
-			<div class="component">
-				<button class="cn-button" id="cn-button">+</button>       
-				<div id="cn-overlay" class="cn-overlay"></div>
-			</div>
-			
-<!--	        Circle background    -->
+            <header>
+                    <div class = "header">
+                  <div class="logout">
+                    <p>Hey, <?php echo $_SESSION['user_name']; ?>.</p>
+                    <a href="index.php?logout">Logout</a>
+                  </div>
+                  <div class = "history">
+                      <a href = d3.html>Mood History</a>
+                  </div>
+                </div>
+                <h1>Mood Library<span>Upload your mood <br>or click the balls to see other people's mood below</span></h1>
+            </header>
+            
+            <div class="component">
+                <button class="cn-button" id="cn-button">+</button>       
+                <div id="cn-overlay" class="cn-overlay"></div>
+            </div>
+            
+<!--            Circle background    -->
             <svg  viewBox="0 0 1000 500">
                 <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="50" cy="50"></circle>
                 <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="150" cy="50"></circle>
@@ -60,12 +60,12 @@
                 <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="350" cy="50"></circle>
                 <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="450" cy="50"></circle>
                 <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="550" cy="50"></circle>
-                 <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="650" cy="50"></circle>
+                <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="650" cy="50"></circle>
                 <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="750" cy="50"></circle>
                 <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="850" cy="50"></circle>
                 <circle class="click-popup-call" fill-opacity="0.4" r="50" cx="950" cy="50"></circle>
             </svg>
-    <!--	      Circle background End -->
+    <!--          Circle background End -->
             
           <div class="popup-call">
   
@@ -175,6 +175,8 @@
 
         <?php
 
+            error_reporting(0);
+
             $target_dir = "uploads/";
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
             $uploadOk = 1;
@@ -195,14 +197,14 @@
                 }
             }
             // Check if file already exists
-            if (file_exists($target_file)) {
+            if (file_exists($target_file) && isset($_POST["submit"])) {
                 echo '<script language="javascript">';
                 echo 'alert("Sorry, file already exists.")';
                 echo '</script>';
                 $uploadOk = 0;
             }
             // Check file size
-            if ($_FILES["fileToUpload"]["size"] > 500000) {
+            if ($_FILES["fileToUpload"]["size"] > 500000 && isset($_POST["submit"])) {
                 echo '<script language="javascript">';
                 echo 'alert("Sorry, your file is too large.")';
                 echo '</script>';
@@ -210,7 +212,7 @@
             }
             // Allow certain file formats
             if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-            && $imageFileType != "gif" ) {
+            && $imageFileType != "gif" && isset($_POST["submit"])) {
                 echo '<script language="javascript">';
                 echo 'alert("Sorry, only JPG, JPEG, PNG & GIF files are allowed.")';
                 echo '</script>';
@@ -227,7 +229,8 @@
                     echo '<script language="javascript">';
                     echo 'alert("Thank you for sharing your mood! The file'. basename( $_FILES["fileToUpload"]["name"]). ' has been uploaded.")';
                     echo '</script>';
-                } else {
+                } 
+                else {
                     echo '<script language="javascript">';
                     echo 'alert("Sorry, there was an error uploading your file.")';
                     echo '</script>';
@@ -306,5 +309,5 @@
    
         </script>
         <script src="js/polyfills.js"></script>
-	</body>
+    </body>
 </html>
