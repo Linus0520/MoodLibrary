@@ -133,7 +133,7 @@ body, button, input, select, textarea, code {
 	cursor: pointer;
 	display: inline-block;
 	vertical-align: middle;
-	font-size: 12px;
+	font-size: 18px;
 	font-weight: bold;
 	height: 27px;
 	line-height: 27px;
@@ -143,6 +143,7 @@ body, button, input, select, textarea, code {
 	text-decoration: none;
 	border-radius: 2px;
 	border: 1px solid #ddd;
+	padding: .5em;
 	/*color: #666;
 	background-color: #f5f5f5;
 	background: -webkit-linear-gradient(top, #F5F5F5, #F1F1F1);
