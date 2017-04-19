@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Group web</title>
+        <title>Mood Library</title>
     <link rel="shortcut icon" href="image/leaf.png" type="image/x-icon">
 <link rel="icon" href="image/leaf.png" type="image/x-icon">
 <!--        CSS FILE-->
