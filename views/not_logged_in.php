@@ -18,7 +18,8 @@ if (isset($login)) {
 <html >
   <head>
     <meta charset="UTF-8">
-    <title>group web</title>
+    <title>Mood Library</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/detail.css" media="all">
     <link rel="shortcut icon" href="image/leaf.png" type="image/x-icon">
