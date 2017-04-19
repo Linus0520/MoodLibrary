@@ -45,7 +45,7 @@
                     <a href="index.php?logout">Logout</a>
                   </div>
 				</div>
-				<h1>Mood Library<span>Upload your mood <br>or click the balls to see other people's mood below</span></h1>
+				<h1>Mood Library<span>Upload your mood <br>or click the circles to see other people's mood below</span></h1>
 			</header>
             
             <div class="component">
