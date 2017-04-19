@@ -2,7 +2,7 @@
 session_start();
 // $username = $_SESSION['user_name']; 
 
-  $db = new PDO('mysql:host=db678294987.db.1and1.com;dbname=db678294987;charset=utf8', 'dbo678294987', 'Moodlibrary');
+  $db = new PDO();
 
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
