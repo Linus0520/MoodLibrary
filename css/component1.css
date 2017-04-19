@@ -211,7 +211,42 @@ circle:nth-child(10) {
     width: auto;
     height: auto;
 }
-.popup-call, .popup-call-form {
+
+.close{
+  display: inline;
+  position: absolute;
+  right: 3px;
+  top:3px;
+}
+
+.close button{
+  background-color: pink;
+  color: white;
+  cursor: pointer;
+  border: 0;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  padding-left: .8em;
+  padding-right: .8em;
+  border-radius: 3px;
+}
+
+.popup-call{
+  position:fixed;
+  margin:auto;
+  clear:both;
+  height:250px;
+/*  width:300px;*/
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  outline:0;
+  display: none;
+  transition: 0.5s ease all;
+
+}
+ .popup-call-form {
   position:fixed;
   margin:auto;
   clear:both;
@@ -226,7 +261,7 @@ circle:nth-child(10) {
   transition: 0.5s ease all;
 }
 
-.popup-call-show, .popup-call-show-form{
+ .popup-call-show-form{
   opacity:1;
   transform:scale(1);
   transition: 0.5s ease all;
@@ -243,6 +278,7 @@ circle:nth-child(10) {
 .wall-container {
   height: 200px;
   overflow: hidden;
+  position: relative;
 }
 
 .wall-pic {

@@ -68,31 +68,13 @@
             </svg>
     <!--          Circle background End -->
             
-          <div class="popup-call">
+          <div class="popup-call" tabindex="-1">
   
                 <div class="card">
                   <div class="wall-container">
-
-      
-            <!-- $db = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', 'root');
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-
-            $sql = "SELECT * 
-            FROM `upload` INNER JOIN `emoji` 
-            ON (`emoji`.`emoji_id`=`upload`.`emoji_id`)
-            ORDER BY RAND() LIMIT 1";
-
-            $sth = $db->prepare($sql);
-            $sth->execute();
-            $result = $sth->fetchAll();
-            print_r(result);
-
-            echo "<img class='wall-pic' src='uploads/".$result[0]['picturename']."'/></div>
-                  <div class='profile' >
-                    <img class='profile-pic' src='emojis/".$result[0]['emoji_image']."'/>";
-            echo "<h2>Tom Hanks</h2>"; //we havn't figured out how to input the user name data, so can't display yet
-            echo "<p>".$result[0]['story']."</p>" -->
+                  <div class = "close">
+                  <button class = "close">X</button>
+                  </div>
 
            <img class="wall-pic" src="http://www.transformingourselves.com/Images/Meditation-leaf.jpg" />
                   </div>
@@ -117,12 +99,12 @@
             </div>
                   <div class="emojis">
                     <label class="radioGone">
-                          <input type="radio" name="emoji_id" value="1" checked>
+                          <input type="radio" name="emoji_id" value="5" checked>
                             <img src="emojis/rad.png">
                     </label>
 
                     <label class="radioGone">
-                          <input type="radio" name="emoji_id" value="2">
+                          <input type="radio" name="emoji_id" value="4">
                             <img src="emojis/good.png">
                     </label>
 
@@ -132,12 +114,12 @@
                     </label>
 
                     <label class="radioGone">
-                          <input type="radio" name="emoji_id" value="4">
+                          <input type="radio" name="emoji_id" value="2">
                             <img src="emojis/sad.png">
                     </label>
 
                     <label class="radioGone">
-                          <input type="radio" name="emoji_id" value="5">
+                          <input type="radio" name="emoji_id" value="1">
                             <img src="emojis/awful.png">
                     </label>
               </div>
@@ -158,22 +140,6 @@
             
 </div>
       
-      
-   <!--    $db = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', 'root');
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-
-        $username = $_SESSION['user_name']; 
-        $date = date("Y/m/d");
-
-        if(isset($_POST['emoji_id'])&&isset($_POST['story'])){
-          $emoji = $_POST['emoji_id'];
-          $story = $_POST['story'];
-          $sql = "INSERT INTO `upload` (`emoji_id`,`user_name`,`story`,`date`) VALUES (?,?,?,?)";
-          $query = $db->prepare($sql);
-            $result = $query->execute([$emoji,$username, $story,$date]);
-        } -->
-
         <?php
 
             error_reporting(0);
@@ -238,7 +204,7 @@
 //                 }
             }
 
-            $db = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', 'root');
+                $db = new PDO('mysql:host=db678294987.db.1and1.com;dbname=db678294987;charset=utf8', 'dbo678294987', 'Moodlibrary');
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
@@ -260,8 +226,7 @@
         <script>   
             //popup 
           $(document).ready(function(){
-              $('.click-popup-call').on('click', function(){
-                $('.popup-call').toggleClass('popup-call-show');
+            $(".click-popup-call").click(function(e){
 
                 var myRequest = new XMLHttpRequest;
                 myRequest.onreadystatechange = function(){     
@@ -289,21 +254,29 @@
                     $("#fullstory").html( fullstory );
                     
                   }
-
                 }
                 //replace existing data
 
                 //$(element).find('.wall-pic').removeAttr('src');
                 //$(element).find('.wall-pic').attr('src', 'uploads/' + responseObject[Math.random()].picturename);
 
-
                 myRequest.open("GET", "datajson_test.php", true); //making the actual request, true means it is asynchronous // Send urls through the url
                 myRequest.send(null);
-              });
+
+                e.preventDefault();
+                $(".popup-call").fadeIn(300);
+
+                });
+
+                $('.close').click(function() {
+                   $(".popup-call").fadeOut(300);
+                });
+
 
               $('.cn-button').on('click', function(){
                 $('.popup-call-form').toggleClass('popup-call-show-form');
               });
+
             });
 
 

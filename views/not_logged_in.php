@@ -123,24 +123,6 @@ if (isset($login)) {
     height: 250px;
    
 }
-
-/*button {
-    background-color:rgba(255, 255, 255, 0);
-    color: #e7e7e7;
-    padding: 5px;
-    margin: 5px;
-    border: 0px solid #e7e7e7;
-    -webkit-transition-duration: 0.4s; /* Safari *!/
-    transition-duration: 0.4s;
-    cursor: pointer;
-}
-
-button:hover {
-    color: black;
-    background-color: rgba(255, 255, 255, 0.7);
-}*/
-
-
     </style>
 
     <script src="js/prefixfree.min.js"></script>
@@ -163,8 +145,6 @@ button:hover {
             $('.theme-pop-mask').fadeOut(100);
             $('.theme-pop').slideUp(200);
         })
-        
-    
     })
     </script>
 
@@ -244,18 +224,3 @@ if (isset($registration)) {
 </body>
 </html>
 
-
-<!-- login form box -->
-<!-- <form method="post" action="index.php" name="loginform">
-
-    <label for="login_input_username">Username</label>
-    <input id="login_input_username" class="login_input" type="text" name="user_name" required />
-
-    <label for="login_input_password">Password</label>
-    <input id="login_input_password" class="login_input" type="password" name="user_password" autocomplete="off" required />
-
-    <input type="submit"  name="login" value="Log in" />
-
-</form>
-
-<a href="register.php">Register new account</a> -->
