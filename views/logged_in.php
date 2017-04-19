@@ -35,17 +35,18 @@
         <div class="container">
 
             <header>
-                    <div class = "header">
+			        <div class = "header">
+				  
+				  <div class = "history">
+                      <a href="d3.html"><img src="image/history.png" alt="blank!" width="50" height="50" border="0"></a>
+				  </div>
                   <div class="logout">
-                    <p>Hey, <?php echo $_SESSION['user_name']; ?>.</p>
+                    <p>Hey, <?php echo $_SESSION['user_name']; ?>!</p>
                     <a href="index.php?logout">Logout</a>
                   </div>
-                  <div class = "history">
-                      <a href = d3.html>Mood History</a>
-                  </div>
-                </div>
-                <h1>Mood Library<span>Upload your mood <br>or click the balls to see other people's mood below</span></h1>
-            </header>
+				</div>
+				<h1>Mood Library<span>Upload your mood <br>or click the balls to see other people's mood below</span></h1>
+			</header>
             
             <div class="component">
                 <button class="cn-button" id="cn-button">+</button>       
