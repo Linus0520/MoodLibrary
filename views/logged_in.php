@@ -231,11 +231,11 @@
                     echo 'alert("Thank you for sharing your mood! The file'. basename( $_FILES["fileToUpload"]["name"]). ' has been uploaded.")';
                     echo '</script>';
                 } 
-                else {
-                    echo '<script language="javascript">';
-                    echo 'alert("Sorry, there was an error uploading your file.")';
-                    echo '</script>';
-                }
+//                 else {
+//                     echo '<script language="javascript">';
+//                     echo 'alert("Sorry, there was an error uploading your file.")';
+//                     echo '</script>';
+//                 }
             }
 
             $db = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', 'root');
