@@ -11,7 +11,7 @@
  * DB_USER: user for your database. the user needs to have rights for SELECT, UPDATE, DELETE and INSERT.
  * DB_PASS: the password of the above user
  */
-define("DB_HOST", "db678294987.db.1and1.com");
-define("DB_NAME", "db678294987");
-define("DB_USER", "dbo678294987");
-define("DB_PASS", "Moodlibrary");
+define("DB_HOST", "");
+define("DB_NAME", "");
+define("DB_USER", "");
+define("DB_PASS", "");
